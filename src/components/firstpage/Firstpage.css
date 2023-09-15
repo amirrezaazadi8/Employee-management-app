@@ -1,0 +1,43 @@
+.main{
+    border: 2px blue solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px blue;
+    width: 60%;
+    height: 70vh;
+    margin: 20px auto;
+    background-color: rgb(237, 250, 246);
+}
+
+.header{
+    font-size: xx-large;
+    color: rgb(3, 111, 111);
+}
+
+.text{
+    justify-content: center;
+    word-wrap: break-word;
+    padding: 10px 50px;
+    line-height: 5dvb;
+    font-weight: 500;
+    color: rgb(79, 79, 111);
+}
+
+.button{
+    width: 100px;
+    height: 55px;
+    background-color: rgb(138, 179, 167);
+    color: rgb(60, 60, 252);
+    font-weight: 800;
+    font-size: larger;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+@media (max-width: 1100px) {
+    .main{
+        height: 100%;
+        
+    }
+}
