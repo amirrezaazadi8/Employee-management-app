@@ -1,9 +1,10 @@
 import './App.css';
+import FirstPage from './components/FirstPage';
 
 function App() {
   return (
     <div className="App">
-      app
+      <FirstPage />
     </div>
   );
 }
