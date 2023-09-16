@@ -1,12 +1,12 @@
 import React from 'react';
-
+import "./ListEmployee.css"
 
 const ListEmployee = () => {
     return (
         <div>
 
             <div class="contain-table">
-                <table class="striped-table">
+                <table class="style-table">
                     <thead>
                         <tr>
                             <th>No.</th>

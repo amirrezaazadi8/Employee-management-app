@@ -1,0 +1,33 @@
+.style-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.5em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 50px auto;
+}
+
+.style-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.style-table th,
+.style-table td {
+  padding: 15px 20px;
+}
+
+.button {
+  width: 5rem;
+  height: 2rem;
+  border: 1px solid #009879;
+  border-radius: 5px;
+  background-color: #009879;
+  color: rgb(255, 255, 255);
+  font-size: medium;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #03f8c7;
+}
