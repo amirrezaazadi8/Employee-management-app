@@ -26,3 +26,4 @@ src/logo.svg
 src/App.test.js
 src/reportWebVitals.js
 src/setupTests.js
+src/components/FirstPage.js
