@@ -1,12 +1,13 @@
 import React from 'react';
 import "./ListEmployee.css"
+import List from './List';
 
 const ListEmployee = () => {
     return (
         <div>
 
-            <div class="contain-table">
-                <table class="style-table">
+            <div className="contain-table">
+                <table className="style-table">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -15,20 +16,11 @@ const ListEmployee = () => {
                             <th>Email</th>
                             <th>Salary</th>
                             <th>Date</th>
-                            <th colspan="2" class="text-center">Actions</th>
+                            <th colSpan="2" className="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Susan</td>
-                            <td>Jordon</td>
-                            <td>susan@example.com</td>
-                            <td>$95,000</td>
-                            <td>2019-04-11 </td>
-                            <td class="text-right"><button class="button muted-button">Edit</button></td>
-                            <td class="text-left"><button class="button muted-button">Delete</button></td>
-                        </tr>
+                        <List />
                         <tr>
                             <td>2</td>
                             <td>Adrienne</td>
@@ -36,8 +28,8 @@ const ListEmployee = () => {
                             <td>adrienne@example.com</td>
                             <td>$80,000</td>
                             <td>2019-04-17 </td>
-                            <td class="text-right"><button class="button muted-button">Edit</button></td>
-                            <td class="text-left"><button class="button muted-button">Delete</button></td>
+                            <td className="text-right"><button className="button muted-button">Edit</button></td>
+                            <td className="text-left"><button className="button muted-button">Delete</button></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -46,8 +38,8 @@ const ListEmployee = () => {
                             <td>rolf@example.com</td>
                             <td>$79,000</td>
                             <td>2019-05-01 </td>
-                            <td class="text-right"><button class="button muted-button">Edit</button></td>
-                            <td class="text-left"><button class="button muted-button">Delete</button></td>
+                            <td className="text-right"><button className="button muted-button">Edit</button></td>
+                            <td className="text-left"><button className="button muted-button">Delete</button></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -55,8 +47,8 @@ const ListEmployee = () => {
                             <td>kent@example.com</td>
                             <td>$56,000</td>
                             <td>2019-05-03 </td>
-                            <td class="text-right"><button class="button muted-button">Edit</button></td>
-                            <td class="text-left"><button class="button muted-button">Delete</button></td>
+                            <td className="text-right"><button className="button muted-button">Edit</button></td>
+                            <td className="text-left"><button className="button muted-button">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>
