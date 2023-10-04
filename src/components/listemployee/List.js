@@ -1,17 +1,15 @@
 import React from 'react';
-import store from '../../app/Store'
 
-const List = () => {
+const List = ({fname,lname,email,salary,date}) => {
 
-    console.log(store);
     return (
         <tr>
             <td>1</td>
-            <td>Susan</td>
-            <td>Jordon</td>
-            <td>susan@example.com</td>
-            <td>$95,000</td>
-            <td>2019-04-11 </td>
+            <td>{fname}</td>
+            <td>{lname}</td>
+            <td>{email}</td>
+            <td>{salary} $</td>
+            <td>{date}</td>
             <td className="text-right"><button className="button muted-button">Edit</button></td>
             <td className="text-left"><button className="button muted-button">Delete</button></td>
         </tr>

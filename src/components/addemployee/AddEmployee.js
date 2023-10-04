@@ -2,55 +2,62 @@ import React, { useState } from 'react';
 import './AddEmployee.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserPayload } from '../../features/ListSlice';
+import { Link } from 'react-router-dom';
 
 
 const AddEmployee = () => {
 
-    const employees = useSelector(store => store.list);
     const dispatch = useDispatch();
 
-    const [fname, setFname] = useState("");
-    const [lname, setLname] = useState("");
-    const [email, setEmail] = useState("");
-    const [salary, setSalary] = useState(0);
+    const [user, setUser] = useState(
+        {
+            firstName: "",
+            lastName: "",
+            email: "",
+            salary: "",
+            date: "",
+        }
+    );
 
-    const user = {
-        fname: fname,
-        lname: lname,
-        email: email,
-        salary: salary
-    }
 
-    const clickHandler = (e) => {
-        e.preventDefault()
-        dispatch(setUserPayload(user))
-        console.log(employees);
+    const clickHandler = () => {
+        dispatch(setUserPayload(user));
     }
 
 
     return (
         <div>
-
             <h2>AddEmployee</h2>
             <form>
                 <label htmlFor="fname">First Name</label>
-                <input value={fname} onChange={(event) => setFname(event.target.value)} type="text" id="fname" name="firstname" placeholder="Your first name.."></input>
+                <input value={user.firstName} onChange={(event) => setUser({ ...user, firstName: event.target.value })}
+                    type="text" id="fname" name="firstname" placeholder="Your first name..">
+                </input>
 
                 <label htmlFor="lname">Last Name</label>
-                <input value={lname} onChange={(event) => setLname(event.target.value)} type="text" id="lname" name="lastname" placeholder="Your last name.."></input>
+                <input value={user.lastName} onChange={(event) => setUser({...user, lastName: event.target.value })}
+                    type="text" id="lname" name="lastname" placeholder="Your last name..">
+                </input>
 
                 <label htmlFor="email">Email</label>
-                <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" id="email" name="email" placeholder="Your email.."></input>
+                <input value={user.email} onChange={(event) => setUser({...user, email: event.target.value })}
+                    type="email" id="email" name="email" placeholder="Your email..">
+                </input>
 
                 <label htmlFor="salary">salary</label>
-                <input value={salary} onChange={(event) => setSalary(event.target.value)} type="number" id="salary" name="salary" placeholder="salary"></input>
+                <input value={user.salary} onChange={(event) => setUser({...user, salary: event.target.value })}
+                    type="number" id="salary" name="salary" placeholder="salary">
+                </input>
 
-                <button type="submit" value={user} onClick={() => clickHandler}>add</button>
-                <button type='submit' value="Submit">cancel</button>
+                <label htmlFor="date">date</label>
+                <input value={user.date} onChange={(event) => setUser({...user, date: event.target.value })}
+                    type="date" id="date" name="date" placeholder="date">
+                </input>
+
+                <Link id='link' to='/listemployee' type="submit" onClick={clickHandler}>add</Link>
+                <Link id='link' to='/' type='submit'>cancel</Link>
             </form>
-            {console.log(user)}
-            {console.log(employees)}
-        </div>
+        </div >
     )
 }
 
