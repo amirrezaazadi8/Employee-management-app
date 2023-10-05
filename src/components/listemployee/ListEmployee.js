@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom';
 
 const ListEmployee = () => {
 
-    const employee = useSelector(store => store.list.user);
-    const { firstName, lastName, email, salary, date } = employee;
+    const employees = useSelector(store => store.list.allEmployees);
+    
+    // const { firstName, lastName, email, salary, date } = employee;
 
     
+
     return (
         <div>
 
             <div className="contain-table">
-                {firstName
+                {/* {firstName
                     ? <table className="style-table">
                         <thead>
                             <tr>
@@ -32,7 +34,7 @@ const ListEmployee = () => {
                         </tbody>
                     </table>
                     : <h3>There is no employee !!!</h3>
-                }
+                } */}
             </div>
 
             <div>

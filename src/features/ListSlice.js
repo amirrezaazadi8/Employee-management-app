@@ -2,13 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    user: {
+    employee: {
         firstName: '',
         lastName: '',
         email: '',
         salary: '',
         data: "",
-    }
+    },
+    allEmployees: []
 };
 
 
@@ -17,7 +18,14 @@ const listSlice = createSlice({
     initialState: initialState,
     reducers: {
         setUserPayload: (state, action) => {
-            state.user = action.payload
+            const newUser = action.payload
+            state.allEmployees.push({
+                firstName: newUser.firstName,
+                lastName: newUser.lastName,
+                email: newUser.email,
+                salary: newUser.salary,
+                data: newUser.data
+            })
         }
     }
 });
