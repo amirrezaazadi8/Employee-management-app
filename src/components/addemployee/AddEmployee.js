@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './AddEmployee.css'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setUserPayload } from '../../features/ListSlice';
 import { Link } from 'react-router-dom';
 // ---------------------------------------------------------------
@@ -19,8 +19,6 @@ const AddEmployee = () => {
     );
 
     const clickHandler = () => {
-        // const employee = [];
-        // employee.push(user);
         dispatch(setUserPayload(user));
     }
 

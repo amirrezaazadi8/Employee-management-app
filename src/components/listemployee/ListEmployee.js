@@ -7,16 +7,11 @@ import { Link } from 'react-router-dom';
 const ListEmployee = () => {
 
     const employees = useSelector(store => store.list.allEmployees);
-    
-    // const { firstName, lastName, email, salary, date } = employee;
-
-    
-
     return (
         <div>
 
             <div className="contain-table">
-                {/* {firstName
+                {employees.length
                     ? <table className="style-table">
                         <thead>
                             <tr>
@@ -30,15 +25,29 @@ const ListEmployee = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <List fname={firstName} lname={lastName} email={email} salary={salary} date={date} />
+                            {employees.map(employee => {
+                                const { firstName, lastName, email, salary, date } = employee;
+                                const i = employees.indexOf(employee) + 1;
+                                return (< List
+                                    key={i}
+                                    num={i}
+                                    fName={firstName}
+                                    lName={lastName}
+                                    email={email}
+                                    salary={salary}
+                                    date={date}
+                                />)
+
+                            })}
                         </tbody>
                     </table>
                     : <h3>There is no employee !!!</h3>
-                } */}
+                }
             </div>
 
             <div>
                 <Link id='link' to="/">back</Link>
+                <Link id='link' to="/addemployee">add some one</Link>
             </div>
 
         </div>

@@ -1,17 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
     employee: {
         firstName: '',
         lastName: '',
         email: '',
         salary: '',
-        data: "",
+        date: "",
     },
     allEmployees: []
 };
-
 
 const listSlice = createSlice({
     name: 'list',
@@ -24,11 +22,15 @@ const listSlice = createSlice({
                 lastName: newUser.lastName,
                 email: newUser.email,
                 salary: newUser.salary,
-                data: newUser.data
+                date: newUser.date,
             })
+        },
+        deleteUser: (state, action) => {
+            const email = action.payload;
+            state.allEmployees = state.allEmployees.filter(employee => employee.email !== email);
         }
     }
 });
 
 export default listSlice.reducer;
-export const { setUserPayload } = listSlice.actions;
+export const { setUserPayload, deleteUser } = listSlice.actions;
