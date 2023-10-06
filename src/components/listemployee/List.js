@@ -1,11 +1,13 @@
 import React from 'react';
+import './List.css'
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { deleteUser } from '../../features/ListSlice';
+import { deleteUser, editUser } from '../../features/ListSlice';
 
 const List = ({ num, fName, lName, email, salary, date }) => {
 
     const dispatch = useDispatch();
-    
+
     return (
         <tr>
             <td>{num}</td>
@@ -15,7 +17,11 @@ const List = ({ num, fName, lName, email, salary, date }) => {
             <td>{salary} $</td>
             <td>{date}</td>
             <td className="text-right">
-                <button className="button muted-button">Edit</button>
+                <button className="button muted-button" onClick={() => dispatch(editUser(email))}>
+                    <Link id='edit' to='/addemployee'>
+                        Edit
+                    </Link>
+                </button>
             </td>
             <td className="text-left">
                 <button className="button muted-button" onClick={() => dispatch(deleteUser(email))}>Delete</button>

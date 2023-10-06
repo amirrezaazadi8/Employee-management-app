@@ -8,6 +8,7 @@ const initialState = {
         salary: '',
         date: "",
     },
+    editEmployee: [],
     allEmployees: []
 };
 
@@ -28,9 +29,16 @@ const listSlice = createSlice({
         deleteUser: (state, action) => {
             const email = action.payload;
             state.allEmployees = state.allEmployees.filter(employee => employee.email !== email);
+        },
+        editUser: (state, action) => {
+            const email = action.payload;
+            state.editEmployee = state.allEmployees.filter(employee => employee.email === email);
+        },
+        removeEdit: (state) => {
+            state.editEmployee = []
         }
     }
 });
 
 export default listSlice.reducer;
-export const { setUserPayload, deleteUser } = listSlice.actions;
+export const { setUserPayload, deleteUser, editUser, removeEdit } = listSlice.actions;

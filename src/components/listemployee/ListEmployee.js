@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const ListEmployee = () => {
 
     const employees = useSelector(store => store.list.allEmployees);
+    
     return (
         <div>
 
